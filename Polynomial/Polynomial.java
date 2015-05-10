@@ -15,9 +15,9 @@ import java.util.Comparator;
  */
 public class Polynomial {
 
-    private ArrayList<Termine> termini;
+    private Polinomio termini;
 
-    public Polynomial(ArrayList<Termine> termini) {
+    public Polynomial(Polinomio termini) {
         this.termini = termini;
         fillTheGaps();
         this.termini.sort((Termine e1, Termine e2) -> {
@@ -33,7 +33,7 @@ public class Polynomial {
     }
     
     public Polynomial prodotto(Polynomial p){
-        ArrayList<Termine> newPoli = new ArrayList<Termine>();
+        Polinomio newPoli = new Polinomio();
         for(int i=0;i<termini.size();i++){
             int oneExp = termini.get(i).getExp();
             int oneCoeff = termini.get(i).getCoeff();
@@ -46,9 +46,9 @@ public class Polynomial {
     }
 
     public Polynomial somma(Polynomial p) {
-        ArrayList<Termine> newPoli = new ArrayList<Termine>();
-        ArrayList<Termine> biggest;
-        ArrayList<Termine> lowest;
+        Polinomio newPoli = new Polinomio();
+        Polinomio biggest;
+        Polinomio lowest;
         if (this.termini.size() > p.termini.size()) {
             biggest = this.termini;
             lowest = p.termini;
@@ -98,7 +98,7 @@ public class Polynomial {
     }
 
     public Polynomial derivata() {
-        ArrayList<Termine> newTerms = new ArrayList<Termine>();
+        Polinomio newTerms = new Polinomio();
         for (int i = 0; i < this.termini.size(); i++) {
             int exp = this.termini.get(i).getExp();
             int coeff = this.termini.get(i).getCoeff();
@@ -149,12 +149,12 @@ public class Polynomial {
     }
 
     public static void main(String args[]) {
-        ArrayList<Termine> termini = new ArrayList<Termine>();
+        Polinomio termini = new Polinomio();
         termini.add(new Termine(2, 3));
         termini.add(new Termine(4,1));
         Polynomial poli = new Polynomial(termini);
         
-        ArrayList<Termine> termini1 = new ArrayList<Termine>();
+        Polinomio termini1 = new Polinomio();
         termini1.add(new Termine(2, 3));
         termini1.add(new Termine(-4, 3));
         Polynomial poli1 = new Polynomial(termini1);
