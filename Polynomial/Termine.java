@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package polynomial;
 
 import java.util.Comparator;
 
@@ -33,7 +32,6 @@ public class Termine implements Comparable<Termine> {
     public int hashCode() {
         int hash = 3;
         hash = 47 * hash + this.exp;
-        hash = 47 * hash + this.coeff;
         return hash;
     }
 
